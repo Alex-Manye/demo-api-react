@@ -21,20 +21,18 @@ class CardDetail extends Component {
 
   render() {
     const {photo} = this.state;
-    if(photo){
       return (
-        <section className="photo-detail">
+        <>
+          {photo?
+          <section className="photo-detail">
             <article>
               <img src={photo.url} alt={photo.title} />
               <p>{photo.title}</p>
             </article>
-          </section>
+          </section> : 
+          <p>Loading...</p>}
+        </>
       )
-    }else{
-      return (
-        <p>Loading...</p>
-      )
-    }
   }
 }
 
